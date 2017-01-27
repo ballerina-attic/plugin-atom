@@ -1,0 +1,61 @@
+'.source.bal':
+  'BasePath':
+    'prefix': 'ba'
+    'body': '@BasePath (${1:"/"})'
+  'catch':
+    'prefix': 'ca'
+    'body': 'catch (${1:Exception} ${2:e}) {\n\t$0\n}'
+  'service':
+    'prefix': 'se'
+    'body': 'service ${1:name} {\n\t$6\n}'
+  'else if':
+    'prefix': 'elif'
+    'body': 'else if ($1) {\n\t$0\n}'
+  'else':
+    'prefix': 'el'
+    'body': 'else {\n\t$0\n}'
+  'function':
+    'prefix': 'fu'
+    'body': 'function ${1:name} ($2) {\n\t$0\n}'
+  'if':
+    'prefix': 'if'
+    'body': 'if ($1) {\n\t$0\n}'
+  'import':
+    'prefix': 'im'
+    'body': 'import '
+  'public':
+    'prefix': 'pu'
+    'body': 'public '
+  'resource':
+    'prefix': 'res'
+    'body': 'resource ${1:name} (message m) {\n\t$0\n}'
+  'return':
+    'prefix': 're'
+    'body': 'return '
+  'reply':
+    'prefix': 'rep'
+    'body': 'reply '
+  'throw':
+    'prefix': 'th'
+    'body': 'throw $0'
+  'try':
+    'prefix': 'tr'
+    'body': 'try {\n\t$0\n}'
+  'while':
+    'prefix': 'wh'
+    'body': 'while ($1) {\n\t$0\n}'
+  'ballerina.lang.system':
+    'prefix': 'b.l.s'
+    'body': 'ballerina.lang.system'
+  'ballerina.lang.json':
+    'prefix': 'b.l.j'
+    'body': 'ballerina.lang.json'
+  'ballerina.lang.message':
+    'prefix': 'b.l.m'
+    'body': 'ballerina.lang.message'
+  'ballerina.lang.string':
+    'prefix': 'b.l.s'
+    'body': 'ballerina.lang.string'
+  'ballerina.net.http':
+    'prefix': 'b.n.h'
+    'body': 'ballerina.net.http'
