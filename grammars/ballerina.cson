@@ -1,0 +1,407 @@
+'scopeName': 'source.bal'
+'name': 'Ballerina'
+'fileTypes': [
+    'bal'
+]
+'patterns': [
+    {
+        'begin': '\\b(package)\\b\\s*'
+        'beginCaptures':
+            '1':
+                'name': 'keyword.other.package.ballerina'
+        'end': '\\s*(;)'
+        'endCaptures':
+            '1':
+                'name': 'punctuation.terminator.ballerina'
+        'name': 'meta.package.ballerina'
+        'contentName': 'storage.modifier.package.ballerina'
+        'patterns': [
+            {
+                'match': '(?<=\\.)\\s*\\.|\\.(?=\\s*;)'
+                'name': 'invalid.illegal.character_not_allowed_here.ballerina'
+            }
+            {
+                'match': '(?<!_)_(?=\\s*(\\.|;))|[A-Z]+|\\b\\d+|-+'
+                'name': 'invalid.illegal.character_not_allowed_here.ballerina'
+            }
+            {
+                'match': '''(?x)\\b(?<!\\$)
+                           (boolean|break|case|catch|double|else|float|for|fork|if|import|int|
+                           iterator|join|long|new|package|public|return|switch|this|
+                           throw|throws|try|while|
+                           true|false)\\b
+                         '''
+                'name': 'invalid.illegal.character_not_allowed_here.ballerina'
+            }
+            {
+                'match': '\\.'
+                'name': 'punctuation.separator.ballerina'
+            }
+        ]
+    }#end of package
+    {
+        'begin': '\\b(import)\\b\\s*\\b(version)?\\b\\s'
+        'beginCaptures':
+            '1':
+                'name': 'keyword.other.import.ballerina'
+            '2':
+                'name': 'storage.modifier.ballerina'
+        'end': '\\s*(;)'
+        'endCaptures':
+            '1':
+                'name': 'punctuation.terminator.ballerina'
+        'name': 'meta.import.ballerina'
+        'contentName': 'storage.modifier.import.ballerina'
+        'patterns': [
+            {
+                'match': '''(?x)\\b(?<!\\$)
+                         (boolean|break|case|catch|double|else|float|for|fork|if|import|int|
+                         iterator|join|long|new|package|public|return|switch|this|
+                         throw|throws|try|while|
+                         true|false)\\b
+                           '''
+                'name': 'invalid.illegal.character_not_allowed_here.ballerina'
+            }
+            {
+                'match': '\\.'
+                'name': 'punctuation.separator.ballerina'
+            }
+            {
+                'match': '\\*'
+                'name': 'variable.language.wildcard.ballerina'
+            }
+        ]
+    }#end of import
+    {
+      'include': '#code'
+    }
+  ]
+'repository':
+    'all-types':
+        'patterns': [
+            {
+                'include': '#primitive-types'
+            }
+            {
+                'include': '#builtin-types'
+            }
+        ]
+    'strings':
+        'patterns': [
+            {
+                'begin': '"'
+                'beginCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.begin.ballerina'
+                'end': '"'
+                'endCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.end.ballerina'
+                'name': 'string.quoted.double.ballerina'
+                'patterns': [
+                    {
+                        'match': '\\\\.'
+                        'name': 'constant.character.escape.ballerina'
+                    }
+                ]
+            }
+            {
+                'begin': '\''
+                'beginCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.begin.ballerina'
+                'end': '\''
+                'endCaptures':
+                    '0':
+                        'name': 'punctuation.definition.string.end.ballerina'
+                'name': 'string.quoted.single.ballerina'
+                'patterns': [
+                    {
+                        'match': '\\\\.'
+                        'name': 'constant.character.escape.ballerina'
+                    }
+                ]
+            }
+        ]#end of strings
+    'keywords':
+        'patterns': [
+            {
+                'match': '\\bthrow\\b'
+                'name': 'keyword.control.throw.ballerina'
+            }
+            {
+                'match': '\\?|:'
+                'name': 'keyword.control.ternary.ballerina'
+            }
+            {
+                'match': '\\b(return|reply|break|while|fork|if|else)\\b'
+                'name': 'keyword.control.ballerina'
+            }
+            {
+                'match': '(<<|>>>?|~|\\^)'
+                'name': 'keyword.operator.bitwise.ballerina'
+            }
+            {
+                'match': '((&|\\^|\\||<<|>>>?)=)'
+                'name': 'keyword.operator.assignment.bitwise.ballerina'
+            }
+            {
+                'match': '(===?|!=|<=|>=|<>|<|>)'
+                'name': 'keyword.operator.comparison.ballerina'
+            }
+            {
+                'match': '([+*/%-]=)'
+                'name': 'keyword.operator.assignment.arithmetic.ballerina'
+            }
+            {
+                'match': '(=)'
+                'name': 'keyword.operator.assignment.ballerina'
+            }
+            {
+                'match': '(\\-\\-|\\+\\+)'
+                'name': 'keyword.operator.increment-decrement.ballerina'
+            }
+            {
+                'match': '(\\-|\\+|\\*|\\/|%)'
+                'name': 'keyword.operator.arithmetic.ballerina'
+            }
+            {
+                'match': '(!|&&|\\|\\|)'
+                'name': 'keyword.operator.logical.ballerina'
+            }
+            {
+                'match': '(\\||&)'
+                'name': 'keyword.operator.bitwise.ballerina'
+            }
+        ]#end of keywords
+    'annotations':
+      'patterns': [
+        {
+          'begin': '(@[^ (]+)(\\()'
+          'beginCaptures':
+            '1':
+              'name': 'entity.name.type.annotation.ballerina'
+            '2':
+              'name': 'punctuation.definition.annotation-arguments.begin.bracket.round.ballerina'
+          'end': '(\\))'
+          'endCaptures':
+            '1':
+              'name': 'punctuation.definition.annotation-arguments.end.bracket.round.ballerina'
+          'name': 'meta.declaration.annotation.ballerina'
+          'patterns': [
+            {
+              'captures':
+                '1':
+                  'name': 'constant.other.key.ballerina'
+                '2':
+                  'name': 'keyword.operator.assignment.ballerina'
+              'match': '(\\w*)\\s*(=)'
+            }
+            {
+              'include': '#code'
+            }
+            {
+              'match': ','
+              'name': 'punctuation.separator.delimiter.ballerina'
+            }
+          ]
+        }
+        {
+          'match': '@\\w*'
+          'name': 'entity.name.type.annotation.ballerina'
+        }
+      ]
+    'comments':
+        'patterns': [
+            {
+                'begin': '/\\*'
+                'captures':
+                    '0':
+                        'name': 'punctuation.definition.comment.ballerina'
+                'end': '\\*/'
+                'name': 'comment.block.ballerina'
+            }
+            {
+                'begin': '(^[ \\t]+)?(?=//)'
+                'beginCaptures':
+                    '1':
+                        'name': 'punctuation.whitespace.comment.leading.ballerina'
+                'end': '(?!\\G)'
+                'patterns': [
+                    {
+                        'begin': '//'
+                        'beginCaptures':
+                            '0':
+                                'name': 'punctuation.definition.comment.ballerina'
+                        'end': '\\n'
+                        'name': 'comment.line.double-slash.ballerina'
+                    }
+                ]
+            }
+        ]
+    'primitive-types':
+        'match': '\\b(boolean|int|float|long|double|string)\\b'
+        'name': 'storage.type.primitive.ballerina'
+    'builtin-types':
+        'match': '\\b(message|map|exception|xml|json)\\b'
+        'name': 'storage.type.builtin.ballerina'
+    'service':
+        'begin': '(?=\\w?[\\w\\s]*(?:service|(?:@)?function|resource|connector)\\s+\\w+)'
+        'end': '}'
+        'endCaptures':
+            '0':
+                'name': 'punctuation.section.service.end.bracket.curly.ballerina'
+        'name': 'meta.service.ballerina'
+        'patterns': [
+            {
+                'include': '#storage-modifiers'
+            }
+            {
+                'include': '#comments'
+            }
+            {
+                'captures':
+                    '1':
+                        'name': 'storage.modifier.ballerina'
+                    '2':
+                        'name': 'entity.name.type.service.ballerina'
+                'match': '(service|(?:@)?function|resource|connector)'
+                'name': 'meta.service.identifier.ballerina'
+            }
+            {
+              'begin': '(\\w+)\\s*(\\()'
+              'beginCaptures':
+                '1':
+                  'name': 'entity.name.function.ballerina'
+                '2':
+                  'name': 'punctuation.definition.parameters.begin.bracket.round.ballerina'
+              'end': '\\)'
+              'endCaptures':
+                '0':
+                  'name': 'punctuation.definition.parameters.end.bracket.round.ballerina'
+              'name': 'meta.method.identifier.ballerina'
+              'patterns': [
+                {
+                  'include': '#all-types'
+                }
+              ]
+            }
+            {
+                'begin': '{'
+                'beginCaptures':
+                    '0':
+                        'name': 'punctuation.section.service.begin.bracket.curly.ballerina'
+                'end': '(?=})'
+                'contentName': 'meta.service.body.ballerina'
+                'patterns': [
+                    {
+                        'include': '#service-body'
+                    }
+                ]
+            }
+        ]#end of service
+    'service-body':
+        'patterns': [
+            {
+                'include': '#comments'
+            }
+            {
+                'include': '#static-initializer'
+            }
+            {
+                'include': '#annotations'
+            }
+            {
+                'include': '#resource'
+            }
+            {
+                'include': '#storage-modifiers'
+            }
+            {
+                'include': '#code'
+            }
+        ]
+    'constants-and-special-vars':
+      'patterns': [
+        {
+          'match': '\\b(true|false)\\b'
+          'name': 'constant.language.ballerina'
+        }
+        {
+          'match': '\\b((0(b|B)[01]+)|(0(x|X)[0-9a-fA-F]+)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b'
+          'name': 'constant.numeric.ballerina'
+        }
+      ]
+    'package-reference':
+        'patterns': [
+          {
+            'match': '\\b(?:[a-z]\\w*\\s*(\\:))\\b'
+            'captures':
+              '1':
+                'name': 'punctuation.separator.period.ballerina'
+            'name': 'storage.type.ballerina'
+          }
+        ]#end of package-reference
+    'anonymous-new':
+      'begin': '\\bnew\\b'
+      'beginCaptures':
+        '0':
+          'name': 'keyword.control.new.ballerina'
+      'end': '(?=;|\\))'
+      'patterns': [
+        {
+          'include': '#all-types'
+        }
+        {
+          'include': '#package-reference'
+        }
+        {
+          'include': '#strings'
+        }
+        {
+          'begin': '(?<!\\])\\s*({)' # Don't match new int[]{1, 2, 3};
+          'beginCaptures':
+            '1':
+              'name': 'punctuation.section.inner-class.begin.bracket.curly.ballerina'
+          'end': '}'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.inner-class.end.bracket.curly.ballerina'
+          'name': 'meta.inner-class.ballerina'
+          'patterns': [
+            {
+              'include': '#service-body'
+            }
+          ]
+        }
+      ]
+    'code':
+      'patterns': [
+          {
+            'include': '#all-types'
+          }
+          {
+            'include': '#annotations'
+          }
+          {
+            'include': '#service'
+          }
+          {
+            'include': '#constants-and-special-vars'
+          }
+          {
+            'include': '#anonymous-new'
+          }
+          {
+            'include': '#keywords'
+          }
+          {
+            'include': '#strings'
+          }
+          {
+            'include': '#package-reference'
+          }
+          {
+            'include': '#comments'
+          }
+        ]
