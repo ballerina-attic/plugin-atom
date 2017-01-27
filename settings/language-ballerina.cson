@@ -1,0 +1,9 @@
+'.source.bal':
+  'editor':
+    'commentStart': '// '
+    'foldEndPattern': '^\\s*(\\}|// \\}\\}\\}$)'
+    'increaseIndentPattern': '^.*\\{(\\}|[^}"\']*)$|^\\s*(public):\\s*$'
+    'decreaseIndentPattern': '^(.*\\*/)?\\s*\\}|^\\s*(public):\\s*$'
+'.source.ballerina-properties':
+  'editor':
+    'commentStart': '# '
