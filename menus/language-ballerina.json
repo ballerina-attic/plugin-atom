@@ -1,0 +1,31 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Ballerina",
+        "submenu": [
+          {
+            "label": "Parse",
+            "command": "language-ballerina:parse"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Ballerina",
+          "submenu": [
+            {
+              "label": "Parse",
+              "command": "language-ballerina:parse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
