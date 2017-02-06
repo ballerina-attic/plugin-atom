@@ -129,10 +129,10 @@
                 'match': '\\bthrow\\b'
                 'name': 'keyword.control.throw.ballerina'
             }
-            {
-                'match': '\\?|:'
-                'name': 'keyword.control.ternary.ballerina'
-            }
+            # {
+            #     'match': '\\?|:'
+            #     'name': 'keyword.control.ternary.ballerina'
+            # }
             {
                 'match': '\\b(return|reply|break|while|fork|if|else)\\b'
                 'name': 'keyword.control.ballerina'
@@ -239,6 +239,7 @@
                 ]
             }
         ]
+
     'primitive-types':
         'match': '\\b(boolean|int|float|long|double|string)\\b'
         'name': 'storage.type.primitive.ballerina'
@@ -335,13 +336,23 @@
     'package-reference':
         'patterns': [
           {
-            'match': '\\b(?:[a-z]\\w*\\s*(\\:))\\b'
+            'match': '\\b([a-z]\\w*\\s*):'
             'captures':
               '1':
-                'name': 'punctuation.separator.period.ballerina'
-            'name': 'storage.type.ballerina'
+                'name': 'storage.type.ballerina'
+            # 'name': 'storage.type.ballerina'
           }
         ]#end of package-reference
+    'function-reference':
+        'patterns': [
+          {
+            'match': ':(\s*[a-zA-Z]*)\\('
+            'captures':
+              '1':
+                'name': 'entity.name.function.ballerina'
+            # 'name': 'storage.type.ballerina'
+          }
+        ]#end of function-reference
     'anonymous-new':
       'begin': '\\bnew\\b'
       'beginCaptures':
@@ -354,6 +365,9 @@
         }
         {
           'include': '#package-reference'
+        }
+        {
+          'include': '#function-reference'
         }
         {
           'include': '#strings'
@@ -400,6 +414,9 @@
           }
           {
             'include': '#package-reference'
+          }
+          {
+            'include': '#function-reference'
           }
           {
             'include': '#comments'
