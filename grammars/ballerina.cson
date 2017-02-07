@@ -103,6 +103,10 @@
                         'match': '\\\\.'
                         'name': 'constant.character.escape.ballerina'
                     }
+                    {
+                        'match': '(http|https:\/\/.*)'
+                        'name': 'markup.raw.ballerina'
+                    }
                 ]
             }
             {
@@ -336,11 +340,26 @@
     'package-reference':
         'patterns': [
           {
-            'match': '\\b([a-z]\\w*\\s*):'
+            'match': '([a-z]\\w*\\s*):(\\s*[a-zA-Z]*\\s+[a-zA-Z]+[\\s]?=)'
             'captures':
               '1':
                 'name': 'storage.type.ballerina'
             # 'name': 'storage.type.ballerina'
+          }
+          {
+            'match': '([a-z]\\w*\\s*):(\\s*[a-zA-Z]*\\()'
+            'captures':
+              '1':
+                'name': 'storage.type.ballerina'
+            # 'name': 'storage.type.ballerina'
+          }
+          {
+            'match': '([a-z]\\w*\\s*):(\\s*[a-zA-Z]*.([a-zA-Z]*)\\()'
+            'captures':
+              '1':
+                'name': 'storage.type.ballerina'
+              '3':
+                'name': 'entity.name.function.ballerina'
           }
         ]#end of package-reference
     'function-reference':
