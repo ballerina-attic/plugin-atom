@@ -1,11 +1,19 @@
 {
   "name": "language-ballerina",
+  "main": "./lib/language-ballerina",
   "version": "0.8.0",
   "description": "Ballerina language support in Atom",
   "engines": {
     "atom": "*"
   },
-  "dependencies": {},
+  "activationCommands": {
+    "atom-workspace": "language-ballerina:parse"
+  },
+  "dependencies": {
+    "jquery": "^2.0.0",
+    "sub-atom": "1.1.0",
+    "dom-listener": "0.1.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/wso2/plugin-atom.git"
