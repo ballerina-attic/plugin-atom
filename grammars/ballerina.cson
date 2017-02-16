@@ -27,7 +27,7 @@
             {
                 'match': '''(?x)\\b(?<!\\$)
                            (boolean|break|case|catch|double|else|float|for|fork|if|import|int|
-                           iterator|join|long|new|package|public|return|switch|this|
+                           iterator|join|long|create|package|public|return|switch|this|
                            throw|throws|try|while|
                            true|false)\\b
                          '''
@@ -56,7 +56,7 @@
             {
                 'match': '''(?x)\\b(?<!\\$)
                          (boolean|break|case|catch|double|else|float|for|fork|if|import|int|
-                         iterator|join|long|new|package|public|return|switch|this|
+                         iterator|join|long|create|package|public|return|switch|this|
                          throw|throws|try|while|
                          true|false)\\b
                            '''
@@ -373,10 +373,10 @@
           }
         ]#end of function-reference
     'anonymous-new':
-      'begin': '\\bnew\\b'
+      'begin': '\\bcreate\\b'
       'beginCaptures':
         '0':
-          'name': 'keyword.control.new.ballerina'
+          'name': 'keyword.control.create.ballerina'
       'end': '(?=;|\\))'
       'patterns': [
         {
