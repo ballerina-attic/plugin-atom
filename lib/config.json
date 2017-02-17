@@ -1,0 +1,23 @@
+{
+  "inclusionPriority": {
+    "title": "Inclusion priority",
+    "description": "Inclusion priority in relation to other autocomplete-plus providers",
+    "type": "integer",
+    "default": 20,
+    "order": 0
+  },
+  "excludeLowerPriority": {
+    "title": "Exclude lower priority providers",
+    "description": "Whether to exclude lower priority providers",
+    "type": "boolean",
+    "default": false,
+    "order": 1
+  },
+  "ballerinaHome": {
+    "title": "BALLERINA_HOME",
+    "description": "Enter BALLERINA_HOME path inorder to get autocompletion enabled",
+    "type": "string",
+    "default": "",
+    "order": 1
+  }
+}
