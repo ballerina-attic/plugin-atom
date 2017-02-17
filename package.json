@@ -1,5 +1,5 @@
 {
-  "name": "language-ballerina",
+  "name": "plugin-atom",
   "main": "./lib/language-ballerina",
   "version": "0.8.0",
   "description": "Ballerina language support in Atom",
