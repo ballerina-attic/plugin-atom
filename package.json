@@ -1,5 +1,5 @@
 {
-  "name": "plugin-atom",
+  "name": "language-ballerina",
   "main": "./lib/language-ballerina",
   "version": "0.8.0",
   "description": "Ballerina language support in Atom",
@@ -9,6 +9,9 @@
   "activationCommands": {
     "atom-workspace": "language-ballerina:parse"
   },
+  "activationHooks": [
+    "language-ballerina:grammar-used"
+  ],
   "dependencies": {
     "jquery": "^2.0.0",
     "sub-atom": "1.1.0",
