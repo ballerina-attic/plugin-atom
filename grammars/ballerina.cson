@@ -248,7 +248,7 @@
         'match': '\\b(boolean|int|float|long|double|string)\\b'
         'name': 'storage.type.primitive.ballerina'
     'builtin-types':
-        'match': '\\b(messages|map|exception|xml|json)\\b'
+        'match': '\\b(message|map|exception|xml|json)\\b'
         'name': 'storage.type.builtin.ballerina'
     'service':
         'begin': '(?=\\w?[\\w\\s]*(?:service|(?:@)?function|resource|connector)\\s+\\w+)'
