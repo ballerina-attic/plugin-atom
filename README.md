@@ -17,12 +17,19 @@ This package includes the following functionality to ballerina(.bal) files in At
 
 ##Installing the plugin to Atom
 
+### Installing via Install tab
 1. Open up the Settings View using Cmd+,,
-2. click on the "Install" tab and type "language-ballerina" into the box under Install Packages.
+2. Click on the "Install" tab and type "language-ballerina" into the box under Install Packages.
 3. Resulting packages will come up with an "Install" button.
 4. Clicking install will download the package and install it.
 5. Your editor will now have the functionality that the package provides.
-
+### Installing via zip
+1. Download zip using: https://github.com/ballerinalang/plugin-atom/archive/master.zip
+2. Unzip the folder.
+3. Navigate into the folder.
+4. execute command "apm install".
+5. execute command "apm link".
+6. reload atom application.
 ##How to contribute
 
 Pull requests are highly encouraged and we recommend you to create a GitHub issue
