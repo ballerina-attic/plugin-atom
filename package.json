@@ -25,10 +25,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wso2/plugin-atom.git"
+    "url": "https://github.com/ballerinalang/plugin-atom/.git"
   },
   "bugs": {
-    "url": "https://github.com/wso2/plugin-atom/issues"
+    "url": "https://github.com/ballerinalang/plugin-atom/issues"
   },
   "license": "Apache 2.0"
 }
