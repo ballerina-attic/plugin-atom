@@ -24,7 +24,7 @@ This package includes the following functionality to ballerina(.bal) files in At
 4. Clicking install will download the package and install it.
 5. Your editor will now have the functionality that the package provides.
 ### Installing via zip
-1. Download zip using: https://github.com/ballerinalang/plugin-atom/archive/master.zip
+1. Download zip: https://github.com/ballerinalang/plugin-atom/releases
 2. Unzip the folder.
 3. Navigate into the folder.
 4. execute command "apm install".
