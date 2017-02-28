@@ -18,7 +18,7 @@ This package includes the following functionality to ballerina(.bal) files in At
 ## Installing the plugin to Atom
 
 ### Installing via Install tab
-1. Open up the Settings View using Cmd+
+1. Open up the Settings View (Cmd+, in Mac or Ctrl+, for Windows/Linux)
 2. Click on the "Install" tab and type "language-ballerina" into the box under Install Packages
 3. Resulting packages will come up with an "Install" button
 4. Clicking install will download the package and install it
