@@ -270,7 +270,7 @@
                         'name': 'storage.modifier.ballerina'
                     '2':
                         'name': 'entity.name.type.service.ballerina'
-                'match': '(service|(?:@)?function|resource|connector)'
+                'match': '(service|(?:@)?function|resource|connector)\\b'
                 'name': 'meta.service.identifier.ballerina'
             }
             {
@@ -288,6 +288,9 @@
               'patterns': [
                 {
                   'include': '#all-types'
+                }
+                {
+                    'include': '#annotations'
                 }
               ]
             }
