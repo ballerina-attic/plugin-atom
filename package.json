@@ -1,7 +1,8 @@
 {
   "name": "language-ballerina",
   "main": "./lib/language-ballerina",
-  "version": "0.8.0",
+  "version": "0.8.7",
+  "author": "WSO2 <ballerinalang@wso2.com>",
   "description": "Ballerina language support in Atom",
   "engines": {
     "atom": "*"
@@ -23,10 +24,7 @@
       }
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ballerinalang/plugin-atom/.git"
-  },
+  "repository": "https://github.com/ballerinalang/plugin-atom",
   "bugs": {
     "url": "https://github.com/ballerinalang/plugin-atom/issues"
   },
