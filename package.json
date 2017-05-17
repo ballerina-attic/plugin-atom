@@ -24,10 +24,7 @@
       }
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ballerinalang/plugin-atom/.git"
-  },
+  "repository": "https://github.com/ballerinalang/plugin-atom",
   "bugs": {
     "url": "https://github.com/ballerinalang/plugin-atom/issues"
   },
