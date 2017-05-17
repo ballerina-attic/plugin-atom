@@ -1,7 +1,7 @@
 {
   "name": "language-ballerina",
   "main": "./lib/language-ballerina",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "author": "WSO2 <ballerinalang@wso2.com>",
   "description": "Ballerina language support in Atom",
   "engines": {
