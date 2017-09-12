@@ -1,4 +1,4 @@
-'.source.bal':
+'.source.ballerina':
   'BasePath':
     'prefix': 'ba'
     'body': '@BasePath (${1:"/"})'
